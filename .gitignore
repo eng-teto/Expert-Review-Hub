@@ -1,18 +1,45 @@
 # See https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
 
-# compiled output
-dist
-tmp
-out-tsc
+# ─── Environment files (never commit secrets) ─────────────────────────────────
+.env
+.env.local
+.env.*.local
+*.env
+!.env.example
+!**/.env.example
+backend/.env
+frontend/.env
+
+# ─── Compiled output ──────────────────────────────────────────────────────────
+dist/
+tmp/
+out-tsc/
 *.tsbuildinfo
-.expo
-.expo-shared
+.expo/
+.expo-shared/
 
-# dependencies
-node_modules
+# ─── Dependencies ─────────────────────────────────────────────────────────────
+node_modules/
 
-# IDEs and editors
-/.idea
+# ─── Logs ─────────────────────────────────────────────────────────────────────
+logs/
+*.log
+npm-debug.log*
+yarn-error.log
+pnpm-debug.log*
+
+# ─── Database ─────────────────────────────────────────────────────────────────
+*.sqlite
+*.db
+drizzle/
+
+# ─── Coverage ─────────────────────────────────────────────────────────────────
+/coverage/
+backend/coverage/
+frontend/coverage/
+
+# ─── IDEs and editors ─────────────────────────────────────────────────────────
+/.idea/
 .project
 .classpath
 .c9/
@@ -27,23 +54,22 @@ node_modules
 !.vscode/launch.json
 !.vscode/extensions.json
 
-# misc
-/.sass-cache
+# ─── Misc ─────────────────────────────────────────────────────────────────────
+/.sass-cache/
 /connect.lock
-/coverage
 /libpeerconnection.log
-npm-debug.log
-yarn-error.log
 testem.log
-/typings
+/typings/
 
-# System Files
+# ─── System files ─────────────────────────────────────────────────────────────
 .DS_Store
 Thumbs.db
+Desktop.ini
 
-.cursor/rules/nx-rules.mdc
-.github/instructions/nx.instructions.md
-
-# Replit
+# ─── Replit ───────────────────────────────────────────────────────────────────
 .cache/
 .local/
+
+# ─── Cursor / GitHub auto-generated ──────────────────────────────────────────
+.cursor/rules/nx-rules.mdc
+.github/instructions/nx.instructions.md
